@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport"v
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>验证窗口</title>
+    <script src="js/fontAuto.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/zepto-touch.js"></script>
+</head>
+<body>
+<div id="title"><i></i><span></span></div>
+<dl class="v-m-text">
+    <dt><i></i>请查看手机短信<br />输入验证码<em></em></dt>
+</dl>
+<form method="post" action="lottery.html">
+    <div class="ver-form">
+        <label class="ver-form-label">
+            <span class="i-f-lName">输入验证码</span>
+            <input id="ver" type="text" value="" name="" />
+        </label>
+        <input class="btn" type="button" value="59秒后重发"/>
+    </div>
+    <input class="confirm" value="确认" type="submit" />
+</form>
+<div class="bottom"></div>
+<script>
+    $('.confirm').tap(function(){
+        console.log(2222)
+        $.ajax= {
+            "type": "post",
+            url: "json/json.json",
+            success: function (json) {
+                if (json.message == 'success') {
+                    var verVal= $.trim( $('#ver').val());
+                    if ( json.result != verVal ) {
+                        console.log(1111)
+                        return false;
+                        alert("输入验证码错误！")
+                    }
+                }
+                else {
+                    alert('1系统忙,请稍后！')
+                }
+            },
+            error: function (a, b, c) {
+                alert('2系统忙,请稍后！')
+            }
+        }
+    })
+</script>
+</body>
+</html>

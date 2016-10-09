@@ -1,0 +1,76 @@
+body, div, p, h1, h2, h3, h4, ul, ol, li, dl, dt, dd, ol, form, table, tr, td, span, label, input, select, option, a, img, i, em, strong, b { margin: 0; padding: 0;}
+li { list-style: none;}
+img { border: 0 none;vertical-align: top;}
+a {text-decoration: none;}
+input {border: 0 none; outline:none;}
+.clearfix { *zoom: 1;}
+.clearfix:after {content: ".";clear: both; height: 0; visibility: hidden; display: block;}
+html {font-size: 6.25rem;}
+body { font-family: "微软雅黑";max-width: 640px;min-width: 320px;margin: 0 auto;font-size: 0.18rem;background: #fff;}
+/*首页*/
+#title{ width:6.4rem; height:0.75rem; position: relative;}
+#title i{ display: block; width:0.82rem; height: 0.67rem; position: absolute; right: 0.43rem; bottom:0; background: url('../images/logo.jpg') no-repeat; background-size: 0.82rem 0.67rem; }
+#title span{ display: block; width: 1rem; height: 0.36rem; position: absolute; left: 0.38rem; bottom: 0; background: url('../images/tit.jpg') no-repeat; background-size: 1rem 0.36rem;}
+.i-m-text{ width:6.4rem; height:auto; background:url('../images/adimg.jpg') no-repeat; padding-top:2.42rem; background-size:100% auto; }
+.i-m-text dt{ width: 100%; height: 0.27rem; text-align: center; line-height:0.27rem; position: relative; font-size: 0.25rem; color:#1bb2b2;}
+.i-m-text i,.i-m-text em{ width:2.14rem; height:0.02rem; position: absolute;top:0.12rem; background: #1bb2b1;}
+.i-m-text i{ left:0.26rem;}
+.i-m-text em{ right:0.29rem;}
+.i-m-text dd{ width:5.93rem; height:auto; padding:0.11rem 0.21rem 0.19rem 0.26rem; }
+.i-m-text p{ width: 100%; line-height:0.25rem; font-size: 0.18rem;color:#666;}
+.index-form{ width: 6.05rem; height:3.63rem; margin:0 0.18rem 0.3rem 0.15rem; border: #1bb2b2 1px solid; border-radius: 0.1rem;}
+.i-f-name,.i-f-tel,.index-form-sel{display:block;width:100%; height:0.9rem; border-bottom: 1px solid #1bb2b2;}
+.i-f-name input,.i-f-tel input{ display: block; height:0.9rem; width:4.52rem; float: left; line-height: 0.9rem;}
+
+.index-form span{ color:#1bb2b2; font-size: 0.3rem; display: block; width: 1.37rem; height: 0.9rem; line-height: 0.9rem;float: left; padding-left:0.16rem; }
+.i-f-m-sel{ display: block; width:1.99rem; height: 0.73rem; margin:0.08rem 0.12rem 0.09rem 0.15rem; float:left; position: relative;}
+.i-f-m-sel span{ width:100%; height:0.73rem; line-height: 0.73rem; font-size: 0.28rem; color:#929292; padding-left: 0.04rem; background: url('../images/spanbg.jpg') no-repeat top right; background-size: 0.39rem 0.73rem;  position: absolute; top:0; left: 0; z-index:-1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.i-f-m-sel select{ display: block; width:100%; height: 100%; position: absolute; top:0; left:0; overflow: hidden; opacity:0;}
+
+.i-f-dots{ position: relative; display:block;width:100%; height:0.73rem; padding:0.09rem 0 0.08rem 0; z-index: 5;}
+.i-f-dots label{ display: block; width: 100%; height: 100%;}
+.i-f-dots span{ width:5.89rem; height:0.73rem; line-height:0.73rem; font-size: 0.28rem; color:#929292; background: url('../images/spanbg.jpg') no-repeat top right; position: absolute; top:0; left:0; margin-top: 0.09rem; text-align: center; background-size: 0.39rem 0.73rem; z-index:-1;}
+.i-f-dots select{ width:100%; height:100%; display: block; opacity: 0;}
+.index-map {width: 6.06rem;height: 2.2rem;border: #040000 0.03rem solid;margin: 0.32rem auto 0;border-radius: 0.06rem;/* ~表示不编译 或者e() */ background: url('../images/index-map.jpg') no-repeat right top / 100% 100%;}
+.submit{ width: 6.07rem; height: 0.72rem; display: block; margin: 0.28rem 0 0 0.16rem; background: #02bcbb; border-radius: 0.11rem; font-size: 0.3rem; color: #fff; line-height:0.72rem; text-align: center;}
+/**/
+.v-m-text{ width:6.4rem; height:auto; background:url('../images/v-adimg.jpg') no-repeat; padding-top:2.99rem; background-size:100% auto;}
+.v-m-text dt{ width: 100%; height: 0.86rem; text-align: center; line-height:0.43rem; position: relative; font-size: 0.33rem; color:#1bb2b2;}
+.v-m-text i,.v-m-text em{ width:0.94rem; height:0.02rem; position: absolute;top:0.43rem; background: #1bb2b1;}
+.v-m-text i{ left:0.76rem;}
+.v-m-text em{ right:0.71rem;}
+.ver-form{ width: 5.92rem; height: 2.25rem; padding: 0.42rem 0.23rem 0 0.25rem;}
+.ver-form-label {display: block; width:4.1rem ; height:0.64rem; border: 0.02rem solid #1bb2b2; border-radius: 0.1rem; float:left; margin-bottom: 0.85rem;}
+.ver-form-label span{ display: block; width: 1.55rem; height: 0.64rem; margin-left: 0.13rem; line-height: 0.64rem; color: #1bb2b2; font-size: 0.3rem; float:left;}
+.ver-form-label input{ display: block; width:2.42rem; height: 0.64rem; float:left;}
+.btn{ width:1.78rem; height:0.68rem; display: block; float: left; background: url('../images/btn-bg.png'); color: #fff; font-size: 0.24rem;}
+.confirm{ width:2.58rem; height:0.72rem; display: block; margin: 0 auto; font-size: 0.36rem; color: #fff; background: url('../images/subbg.jpg');}
+.bottom{ width:6.4rem; height:3.67rem; background: url("../images/bottombg.jpg");background-size: 6.4rem 3.67rem;}
+/**/
+.top{ width: 6.4rem; height:2.63rem; background: url("../images/top-bg.jpg"); border-top: 0.03rem solid #d60023; background-size: 6.4rem 2.63rem;}
+.r-main{ width: 6.4rem; height: 6.18rem; position: relative;}
+.pan{ width: 5.92rem; height: 5.92rem; position: absolute; left:0.25rem; top:0.18rem; background: url("../images/pan.png"); background-size:5.92rem 5.92rem;
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transition: all 2s;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -o-transition: all 2s;
+    -ms-transition: all 2s;}
+.pointer{ width:2.1rem; height:2.5rem; position: absolute; left:2.17rem; top:1.63rem; background: url("../images/pointer.png"); background-size:2.1rem 2.5rem;}
+.r-bottom{ width: 6.4rem; height: 1.38rem; background: url("../images/r-bottom.jpg"); background-size: 6.4rem 1.38rem;}
+/**/
+.first-text{ width:6.4rem; height:2.54rem; background:url('../images/prize-ad.jpg'); background-size: 6.4rem 2.54rem; border-top: 0.03rem solid #d60023;}
+.f-main{ width:6.17rem ; height:3.43rem; margin-left: 0.11rem; margin-top:0.03rem;  background: url("../images/prize-bg.jpg");background-size: 6.17rem 3.43rem; position: relative; }
+.f-main span{ height: 0.5rem; line-height: 0.5rem; font-size: 0.45rem; color: #fff; position: absolute; top:1.98rem; left: 0.39rem;}
+.f-submit{ width: 6.07rem; height:0.72rem; background: url("../images/prize-sub.jpg"); background-size: 100% auto; margin: 0.29rem 0 1rem 0.16rem; font-size: 0.3rem; color: #fff;line-height: 0.5rem; font-weight: bold;}
+/**/
+.t-img{ width: 6.4rem; height: 4.74rem; background: url("../images/t-img.jpg"); background-size: 100% auto; border-top: 0.03rem solid #d60023;}
+.t-text{ display: block; width: 4.5rem; height: 0.94rem; padding:0 0.98rem 0 0.92rem; line-height: 0.47rem; text-align: center; color: #010101; font-size: 0.3rem; font-weight: 700;}
+.t-a img{ width: 6.4rem; height: 2.27rem;}
+.t-bottom{ margin-top: 0.65rem; width: 6.5rem; height: 1.6rem; background: url("../images/r-bottom.jpg") no-repeat; background-color: #1bb2b2; background-size: 100% auto;}
+/**/
+.s-img{ width: 6.4rem; height:7.63rem; }

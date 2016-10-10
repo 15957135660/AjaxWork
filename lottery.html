@@ -13,7 +13,7 @@
 <body>
 <div id="title"><i></i><span></span></div>
 <div class="top"></div>
-<form class="r-main" method="post">
+<form class="r-main" method="get">
     <span class="pan"></span>
     <input class="pointer" type="submit"/>
 </form>
@@ -93,13 +93,11 @@
                     panMainNode.style.OTransform="rotate("+deVal+"deg)";
                     panMainNode.style.MsTransform="rotate("+deVal+"deg)";
                     var formNode=document.querySelector(".r-main");
-                    var htmlName=res+'.html';
-                    formNode.action=htmlName;
-                    console.log(htmlName, formNode.action)
-                    console.log(111);
-                    if(window.localStorage){
-                        localStorage.resultDeg=resultDeg;
-                    }
+//                    var htmlName=res+'.html';
+                    formNode.action='forth.html';
+//                    if(window.localStorage){
+//                        localStorage.resultDeg=resultDeg;
+//                    }
                 }
                 else{
                     alert('1系统忙,请稍后！')

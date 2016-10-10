@@ -3,6 +3,7 @@
 <head lang="en">
     <meta name="viewport"v
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8 />
     <title>抽奖</title>
     <script src="js/fontAuto.js"></script>
     <link rel="stylesheet" href="css/style.css"/>
@@ -14,7 +15,7 @@
 <div class="top"></div>
 <form class="r-main" method="post">
     <span class="pan"></span>
-    <input class="pointer" type="button"/>
+    <input class="pointer" type="submit"/>
 </form>
 <div class="r-bottom"></div>
 <script>
@@ -22,23 +23,21 @@
      0：一等奖，
      48:谢谢参与,
      118:四等奖
-    192:三等奖，
+     192:三等奖，
      265:二等奖,
      337:一等奖
      */
     var storageJson={
-
-         '0':'一等奖',
-         '48':'谢谢参与',
-         '448':'四等奖',
-         '192':'三等奖',
-         '265':'二等奖',
-         '337':'一等奖'
+         0:'一等奖',
+         48:'谢谢参与',
+         118:'四等奖',
+         192:'三等奖',
+         265:'二等奖',
+         337:'一等奖'
     }
     if(window.localStorage)
     {
         if(localStorage.resultDeg){//表示已经抽过奖了
-            alert(localStorage.resultDeg)
             var resultMessage=storageJson[localStorage.resultDeg];
             alert("您已经抽过奖了！\n您的奖品是"+resultMessage);
         }
@@ -53,15 +52,16 @@
             }
         }
         $.ajax({
-            type:"get",
+            type:"post",
             url:"json/prize.json",
             success:function(json) {
                 if(json.message=='success'){
                     var deVal=360*2;
+                    var res;
                     if(json.result==0){
                         var resultDeg=48;
                         deVal+=48;
-                        var res='thanks';
+                         res='thanks';
                     }
                     else if(json.result==1)
                     {
@@ -69,22 +69,22 @@
                         var randomVal=Math.floor(Math.random()*2);
                         var resultDeg=arr[randomVal];
                         deVal+=arr[randomVal];
-                        var res='first';
+                         res='first';
                     }
                     else if(json.result==2){
                         var resultDeg=265;
                         deVal+=265;
-                        var res='second';
+                         res='second';
                     }
                     else if(json.result==3){
                         var resultDeg=192;
                         deVal+=192;
-                        var res='third';
+                         res='third';
                     }
                     else if(json.result==4){
                         var resultDeg=118;
                         deVal+=118;
-                        var res='forth';
+                         res='forth';
                     }
                     var panMainNode=document.querySelector(".pan");
                     panMainNode.style.transform="rotate("+deVal+"deg)";
@@ -92,9 +92,11 @@
                     panMainNode.style.MozTransform="rotate("+deVal+"deg)";
                     panMainNode.style.OTransform="rotate("+deVal+"deg)";
                     panMainNode.style.MsTransform="rotate("+deVal+"deg)";
-                    var formNOde=document.querySelector(".r-main");
+                    var formNode=document.querySelector(".r-main");
                     var htmlName=res+'.html';
-                    formNOde.action=htmlName;
+                    formNode.action=htmlName;
+                    console.log(htmlName, formNode.action)
+                    console.log(111);
                     if(window.localStorage){
                         localStorage.resultDeg=resultDeg;
                     }

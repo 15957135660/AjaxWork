@@ -14,7 +14,7 @@
 <dl class="v-m-text">
     <dt><i></i>请查看手机短信<br />输入验证码<em></em></dt>
 </dl>
-<form method="post" action="lottery.html">
+<form method="get" action="lottery.html">
     <div class="ver-form">
         <label class="ver-form-label">
             <span class="i-f-lName">输入验证码</span>
@@ -29,7 +29,7 @@
     $('.confirm').tap(function(){
         console.log(2222)
         $.ajax= {
-            "type": "post",
+            "type": "get",
             url: "json/json.json",
             success: function (json) {
                 if (json.message == 'success') {

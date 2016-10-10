@@ -13,7 +13,7 @@
 <body>
 <div id="title"><i></i><span></span></div>
 <div class="top"></div>
-<form class="r-main" method="get">
+<form class="r-main" method="get"  target="_blank">
     <span class="pan"></span>
     <input class="pointer" type="submit"/>
 </form>
@@ -35,26 +35,27 @@
          265:'二等奖',
          337:'一等奖'
     }
-    if(window.localStorage)
-    {
-        if(localStorage.resultDeg){//表示已经抽过奖了
-            var resultMessage=storageJson[localStorage.resultDeg];
-            alert("您已经抽过奖了！\n您的奖品是"+resultMessage);
-        }
-    }
+//    if(window.localStorage)
+//    {
+//        if(localStorage.resultDeg){//表示已经抽过奖了
+//            var resultMessage=storageJson[localStorage.resultDeg];
+//            alert("您已经抽过奖了！\n您的奖品是"+resultMessage);
+//        }
+//    }
     $(".pointer").tap(function(){
-        if(window.localStorage)
-        {
-            if(localStorage.resultDeg){//表示已经抽过奖了
-                var resultMessage=storageJson[localStorage.resultDeg];
-                alert("您已经抽过奖了！\n您的奖品是"+resultMessage);
-                return;
-            }
-        }
+//        if(window.localStorage)
+//        {
+//            if(localStorage.resultDeg){//表示已经抽过奖了
+//                var resultMessage=storageJson[localStorage.resultDeg];
+//                alert("您已经抽过奖了！\n您的奖品是"+resultMessage);
+//                return;
+//            }
+//        }
         $.ajax({
             type:"get",
             url:"json/prize.json",
             success:function(json) {
+                console.log(111);
                 if(json.message=='success'){
                     var deVal=360*2;
                     var res;
@@ -86,6 +87,7 @@
                         deVal+=118;
                          res='forth';
                     }
+                    console.log(111111)
                     var panMainNode=document.querySelector(".pan");
                     panMainNode.style.transform="rotate("+deVal+"deg)";
                     panMainNode.style.WebkitTransform="rotate("+deVal+"deg)";
@@ -93,12 +95,13 @@
                     panMainNode.style.OTransform="rotate("+deVal+"deg)";
                     panMainNode.style.MsTransform="rotate("+deVal+"deg)";
                     var formNode=document.querySelector(".r-main");
-//                    var htmlName=res+'.html';
-                    formNode.action='forth.html';
+                    var htmlName=res+'.html';
+                    console.log(htmlName)
+                    $(".r-main").attr("action",htmlName);
 //                    if(window.localStorage){
 //                        localStorage.resultDeg=resultDeg;
 //                    }
-                }
+               }
                 else{
                     alert('1系统忙,请稍后！')
                 }

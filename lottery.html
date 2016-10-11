@@ -13,9 +13,9 @@
 <body>
 <div id="title"><i></i><span></span></div>
 <div class="top"></div>
-<form class="r-main" method="get"  target="_blank">
+<form class="r-main" method="get" target="_blank" action="forth.html">
     <span class="pan"></span>
-    <input class="pointer" type="submit"/>
+    <input class="pointer" type="button"/>
 </form>
 <div class="r-bottom"></div>
 <script>
@@ -28,29 +28,14 @@
      337:一等奖
      */
     var storageJson={
-         0:'一等奖',
-         48:'谢谢参与',
-         118:'四等奖',
-         192:'三等奖',
-         265:'二等奖',
-         337:'一等奖'
+         '0':'一等奖',
+         '48':'谢谢参与',
+         '118':'四等奖',
+         '192':'三等奖',
+         '265':'二等奖',
+         '337':'一等奖'
     }
-//    if(window.localStorage)
-//    {
-//        if(localStorage.resultDeg){//表示已经抽过奖了
-//            var resultMessage=storageJson[localStorage.resultDeg];
-//            alert("您已经抽过奖了！\n您的奖品是"+resultMessage);
-//        }
-//    }
     $(".pointer").tap(function(){
-//        if(window.localStorage)
-//        {
-//            if(localStorage.resultDeg){//表示已经抽过奖了
-//                var resultMessage=storageJson[localStorage.resultDeg];
-//                alert("您已经抽过奖了！\n您的奖品是"+resultMessage);
-//                return;
-//            }
-//        }
         $.ajax({
             type:"get",
             url:"json/prize.json",
@@ -94,13 +79,15 @@
                     panMainNode.style.MozTransform="rotate("+deVal+"deg)";
                     panMainNode.style.OTransform="rotate("+deVal+"deg)";
                     panMainNode.style.MsTransform="rotate("+deVal+"deg)";
-                    var formNode=document.querySelector(".r-main");
-                    var htmlName=res+'.html';
-                    console.log(htmlName)
-                    $(".r-main").attr("action",htmlName);
-//                    if(window.localStorage){
-//                        localStorage.resultDeg=resultDeg;
-//                    }
+                    var htmlName=res;
+                    setTimeout(function(){
+                        var localUrl=String(window.location);
+                        localUrl=localUrl.replace(/lottery/,htmlName);
+                        var endPos=localUrl.lastIndexOf("?");
+                        endPos=endPos==-1?localUrl.length:endPos;
+                        localUrl=localUrl.substring(0,endPos);
+                        window.location.replace(localUrl);
+                    },1500)
                }
                 else{
                     alert('1系统忙,请稍后！')
